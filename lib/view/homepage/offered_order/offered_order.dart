@@ -1,4 +1,4 @@
-import 'package:demo_app/view/homepage/offered_order/assign_to.dart';
+import 'package:demo_app/view/homepage/offered_order/customer_details.dart';
 import 'package:demo_app/view/homepage/offered_order/paper_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -32,12 +32,7 @@ class OfferedOrder extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                getCustomerName(),
-                const SizedBox(height: 10),
-                getTags(),
-                const SizedBox(height: 20),
-                const AssignTo(),
-                const SizedBox(height: 5),
+                const CustomerDetails(),
                 const PaperView(),
                 const SizedBox(height: 10),
                 getDetailBtn()
@@ -97,69 +92,6 @@ class OfferedOrder extends StatelessWidget {
           ),
         ),
       ],
-    );
-  }
-
-  Row getTags() {
-    return Row(
-      children: [
-        Container(
-          height: 30,
-          decoration: const BoxDecoration(
-            color: Color(0xFFEBEBED),
-            borderRadius: BorderRadius.all(Radius.circular(10)),
-          ),
-          padding: const EdgeInsets.symmetric(horizontal: 7),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.asset("assets/Vector.png", height: 17, width: 17),
-              const SizedBox(width: 5),
-              const Text(
-                "2.5 kms",
-                style: TextStyle(
-                  color: Color(0xFF22314D),
-                  fontSize: 12,
-                ),
-              ),
-            ],
-          ),
-        ),
-        const SizedBox(width: 10),
-        Container(
-          height: 30,
-          decoration: const BoxDecoration(
-            color: Color(0xFFEBEBED),
-            borderRadius: BorderRadius.all(Radius.circular(10)),
-          ),
-          padding: const EdgeInsets.symmetric(horizontal: 7),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.asset("assets/Vector.png", height: 17, width: 17),
-              const SizedBox(width: 5),
-              const Text(
-                "14 Quotation given",
-                style: TextStyle(
-                  color: Color(0xFF22314D),
-                  fontSize: 12,
-                ),
-              ),
-            ],
-          ),
-        ),
-      ],
-    );
-  }
-
-  Text getCustomerName() {
-    return const Text(
-      "Customer Name",
-      style: TextStyle(
-        color: Color(0xFF22314D),
-        fontSize: 20,
-        fontWeight: FontWeight.bold,
-      ),
     );
   }
 }
